@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react';
-// by default runs after every re-render
-// cleanup function
-// second parameter
-const UseEffectBasics = () => {
-  return <h2>useEffect Basics</h2>;
+import React,{} from "react";
+import { useState } from "react";
+
+const useEffectsBasics = () => {
+  const [value, setValue] = useState(0);
+  return (
+    <div>
+      <h1>{value}</h1>
+      <button className="btn" onClick={()=> setValue(value + 2)}>Add</button>
+    </div>
+  )
 };
 
-export default UseEffectBasics;
+export default useEffectsBasics;
