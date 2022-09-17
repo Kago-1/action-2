@@ -11,23 +11,25 @@ const UseEffectSecondArgument = () => {
     setUsers(users);
     //console.log(users);
  }
-
   useEffect(() => {
     getUsers();
-  }, []);
+  },[]);
+  
 
   return (<>
     <h2>github users</h2>;
     <ul className='users'>
       {users.map((user) => {
         const {id,login,avatar_url,html_url}= user
-        return <li key={id}>
+        return (<>
+          <li key={id}>
           <img src={avatar_url} alt={login} />
           <div>
             <h4>{login}</h4>
             <a className='btn' href={html_url} target="#">Link</a>
         </div>
-        </li>        
+          </li>
+        </>)
       })}
     </ul>
   </>
